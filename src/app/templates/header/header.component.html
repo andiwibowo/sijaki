@@ -1,0 +1,39 @@
+      <nav class="navbar navbar-expand-md navbar-light bg-light custom-nav">
+        <a class="navbar-brand" routerLink="/"><img src="assets/templates/img/icons/books.ico" height="40"> SIJAKI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+          true}">
+              <a class="nav-link" routerLink="/i">Kajian <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+          true}">
+              <a class="nav-link" routerLink="/i/masjid">Masjid</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+          true}">
+              <a class="nav-link" routerLink="/i/majelis">Majelis</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+          true}">
+              <a class="nav-link" routerLink="/i/pemateri">Pemateri</a>
+            </li>
+          </ul>
+          <hr>
+          <ul class="navbar-nav right-nav ml-auto" *ngIf="auth.user | async as user">
+            <li class="nav-item" *ngIf="user.level!=4">
+              <a class="nav-link btn btn-primary addBtn" routerLink="/i/tambah">Post Kajian</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+          true}">
+              <a class="nav-link" routerLink="/i/p/{{ username }}">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn-out" routerLink="" (click)="logout()">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+    </nav>

@@ -1,0 +1,44 @@
+<div class="inner-wrapper">
+	<div class="container">
+		<div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 content__body kajian detail-kajian">
+			<div class="row"> 
+				<div class="col-8 author">
+							<a routerLink="/i/p/{{ kajian.author }}">
+								<img src="../../../assets//component/images/user.png" alt="">
+								<span>{{ kajian.author }}</span>
+							</a>
+				</div>
+				<div class="col-4 option text-right dropdown" *ngIf="author != false">
+					<button type="button" id="dropdownOption" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-ellipsis-v"></i>
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownOption">
+						<a class="dropdown-item" routerLink="/i/e/{{id}}">Edit</a>
+						<button class="dropdown-item" (click)="delete(id)">Delete</button>
+					</div>
+				</div>
+			</div>
+			<div class="kajian-img" *ngIf="kajian.poster?.startsWith('https://'); else noImg">
+				<img [src]="kajian.poster">
+			</div>
+			<div class="kajian-title">
+				<h2>{{ kajian.judul}}</h2>
+				<p>by {{ kajian.pemateri }}
+				</p>
+			</div>
+				<hr>
+			<div  class="kajian-desc">
+				<p>
+					<span>{{ kajian.lokasi }}, {{ kajian.kota }}</span> <br>
+					{{ kajian.tanggal | date : "d MMMM yyyy" }}
+				</p>
+				<div class="kajian-kategori"><a href="#">{{ kajian.kategori }}</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+<ng-template #noImg>
+	<div class="kajian-img-loader">
+		Loading ...
+	</div>
+</ng-template>

@@ -1,0 +1,49 @@
+.kajian-img-loader {
+    text-align: center;
+}
+button.dropdown-item {
+	font-size: .9rem;
+}
+.kajian-img {
+	border-radius: 8px;
+}
+.masjid-title h4 {
+    border-left: 4px solid cyan;
+    padding-left: 10px;
+}
+.author {
+	padding: .5em 0 1em;
+}
+.author img {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	border: 1px solid rgba(0,0,0,.3);
+	margin-right: 1em;
+	margin-left: 1em ;
+}
+.author a span {
+	font-size: .8rem;
+}
+.content__body.kajian {
+	padding-top: 1.5em !important;
+}
+#dropdownOption {
+	padding: .5em 1em;
+	border-radius: 50%;
+	background-color: #f0f0f0;
+	transition: .2s;
+}
+#dropdownOption i {
+	color: #666;
+	line-height: 1em;
+}
+#dropdownOption:hover {
+	border-radius: 4px;
+}
+#dropdownOption:active {
+	background-color: #cdcdcd;
+}
+.detail-kajian {
+	margin-bottom : 5em;
+}
